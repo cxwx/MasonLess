@@ -10,11 +10,21 @@
 <!--                                                                         -->
 <!-- *********************************************************************** -->
 <!-- cspell:disable -->
-```shell
+
+# 删除 Mason 与 Homebrew 重叠的部分
+
+## 查看
+
+```zsh
 ls -l /opt/homebrew/bin ~/.local/share/nvim/mason/bin|awk '{print $11}'|sort|uniq -c|awk '$1>1'
 ```
 
+## 查看位置
 
-```shell
+```zsh
 ls -l /opt/homebrew/bin ~/.local/share/nvim/mason/bin|awk '{print $11}'|sort|uniq -c|awk '$1>1'|awk 'NR>1{print $2}'|xargs -n1 -I{} bash -c 'whereis -a {}'
 ```
+
+## 未解决
+
+- [ ] `rustfmt` as origin from rust
