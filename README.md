@@ -16,13 +16,13 @@
 ## 查看
 
 ```zsh
-ls -l /opt/homebrew/bin ~/.local/share/nvim/mason/bin|awk '{print $11}'|sort|uniq -c|awk '$1>1'
+gls -l /opt/homebrew/bin ~/.local/share/nvim/mason/bin|gawk '{print $9}'|sort|uniq -c|gawk '$1>1'
 ```
 
 ## 查看位置
 
 ```zsh
-ls -l /opt/homebrew/bin ~/.local/share/nvim/mason/bin|awk '{print $11}'|sort|uniq -c|awk '$1>1'|awk 'NR>1{print $2}'|xargs -n1 -I{} bash -c 'whereis -a {}'
+gls -l /opt/homebrew/bin ~/.local/share/nvim/mason/bin|awk '{print $9}'|sort|uniq -c|awk '$1>1'|awk 'NR>1{print $2}'|xargs -n1 -I{} bash -c 'whereis -a {}'
 ```
 
 ## 未解决
