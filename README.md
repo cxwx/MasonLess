@@ -19,6 +19,11 @@
 gls -l /opt/homebrew/bin ~/.local/share/nvim/mason/bin|gawk '{print $9}'|sort|uniq -c|gawk '$1>1'
 ```
 
+```markdown-runner
+   5 
+   2 rustfmt
+```
+
 ## 查看位置
 
 ```zsh
