@@ -16,20 +16,22 @@
 ## 查看
 
 ```zsh
-gls -l /opt/homebrew/bin ~/.local/share/nvim/mason/bin|gawk '{print $9}'|sort|uniq -c|gawk '$1>1'
-```
-
-```markdown-runner
-   5 
-   2 rustfmt
+gls -l /opt/homebrew/bin ~/software/gopath/bin ~/software/npm/install/bin ~/.local/share/nvim/mason/bin|gawk '{print $9}'|sort|uniq -c|gawk '$1>1'
 ```
 
 ## 查看位置
 
 ```zsh
-gls -l /opt/homebrew/bin ~/.local/share/nvim/mason/bin|awk '{print $9}'|sort|uniq -c|awk '$1>1'|awk 'NR>1{print $2}'|xargs -n1 -I{} bash -c 'whereis -a {}'
+gls -l /opt/homebrew/bin ~/software/gopath/bin ~/software/npm/install/bin ~/.local/share/nvim/mason/bin|awk '{print $9}'|sort|uniq -c|awk '$1>1'|awk 'NR>1{print $2}'|xargs -n1 -I{} bash -c 'whereis -a {}'
+```
+
+```markdown-runner
+npm: /Users/chenxu/software/npm/install/bin/npm /opt/homebrew/bin/npm /Users/chenxu/software/npm/install/share/man/man1/npm.1 /opt/homebrew/share/man/man1/npm.1
+npx: /Users/chenxu/software/npm/install/bin/npx /opt/homebrew/bin/npx /Users/chenxu/software/npm/install/share/man/man1/npx.1 /opt/homebrew/share/man/man1/npx.1
 ```
 
 ## 未解决
 
-- [ ] `rustfmt` as origin from rust
+- [X] `rustfmt` as origin from rust
+- [ ] `npm`
+- [ ] `npx`
